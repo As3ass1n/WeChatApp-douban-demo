@@ -2,6 +2,7 @@
 <loading hidden="{{!loading}}">
 	{{title}}
 </loading>
+
 <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
 	<navigator url="../movie/movie?id={{item.id}}" wx:for="{{movies}}">
 		<view class="item">
@@ -18,5 +19,14 @@
 			</view>
 		</view>
 	</navigator>
+	<view class="tips">
+		<view wx:if="{{hasMore}}">
+			<text>使劲儿加载中。。。</text>
+		</view>
+		<view wx:else>
+			<text>数据加载完毕。。。</text>
+		</view>
+	</view>
+
 </scroll-view>
 

@@ -5,36 +5,38 @@ Page({
   data: {
     page: 1,
     size: 20,
-    title: "数据正在加载中...",
-    movie: [],
+    title: "数据加载中...",
+    movies: [],
     loading: true,
     hasMore: true
   },
 
   onLoad: function() {
     var _this = this
+    console.log(_this.data)
     app.fetchApi(API_URL, 0, function(err, data) {
-      console.log(data);
       _this.setData({
-        title: data.title,
         movies: data.subjects,
         loading: false
       })
     })
   },
+
+
   loadMore: function() {
     var _this = this
-    var start = (_this.data.page++)*_this.data.size
-    app.fetchApi(API_URL, start, function(err, data) {
-      console.log(data);
-      if (start) {
-        _this.setData({
-          title: data.title,
-          movies: data.subjects,
-          loading: false
-        })
-      }else{
-        console.log("电影已加载完毕。。。");
+    var params = {
+      start: (_this.data.page++) * _this.data.size,
+      count: _this.data.count
+    }
+    _this.setData({ loading: true })
+    console.log(_this.data)
+      //fetchApi第一个参数是API接口地址，第二个参数为一个对象(设置start和count)
+    app.fetchApi(API_URL, params, function(err, data) {
+      if (data.subjects.length) {
+        _this.setData({ title: data.title, movies: _this.data.movies.concat(data.subjects), loading: false })
+      } else {
+        _this.setData({ hasMore: false, loading: false })
       }
     })
   }

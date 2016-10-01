@@ -1,10 +1,10 @@
 //app.js
 // .js后缀的是脚本文件
 App({
-	fetchApi: function(url,callback) {
+	fetchApi: function(url,params,callback) {
 		wx.request({
 			url:url,
-			data:{},
+			data:params,
 			header: {"Content-Type":"application/json"},
 			success: function (res) {
 				callback(null,res.data)
