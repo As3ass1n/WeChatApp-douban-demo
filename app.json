@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/profile/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#108090",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#030303",
+    "selectedColor":"#111",
+    "backgroundColor":"#f1f1f1",
+    "borderStyle":"white",
+    "list":[{
+      "text":"榜单",
+      "pagePath":"pages/index/index",
+      "iconPath":"images/home.png",
+      "selectedIconPath":"images/home-actived.png"
+      },{
+        "text":"我的",
+        "pagePath":"pages/profile/profile",
+        "iconPath":"images/profile.png",
+        "selectedIconPath":"images/profile-actived.png"
+      }]
+  },
+  "networkTimeout": {
+    "request":10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile":10000
+  }
+}
