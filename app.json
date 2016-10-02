@@ -8,13 +8,13 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#108090",
     "navigationBarTitleText": "豆瓣电影",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar":{
     "color":"#030303",
     "selectedColor":"#111",
-    "backgroundColor":"#f1f1f1",
-    "borderStyle":"white",
+    "backgroundColor":"#fff",
+    "borderStyle":"black",
     "list":[{
       "text":"榜单",
       "pagePath":"pages/index/index",
@@ -32,6 +32,5 @@
     "connectSocket": 10000,
     "uploadFile": 10000,
     "downloadFile":10000
-  },
-  "debug":true
+  }
 }

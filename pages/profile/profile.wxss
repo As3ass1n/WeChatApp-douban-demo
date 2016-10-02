@@ -1,0 +1,19 @@
+.userInfo{
+	width: 100%;
+	margin-top: 50rpx;
+	padding: 20rpx 30rpx;
+	background-color: #fcfcfc;
+
+}
+
+.userInfo .userAvatar{
+	width: 150rpx;
+	height: 150rpx;
+	vertical-align: middle;
+}
+
+.userInfo .userName{
+	margin-left: 45rpx;
+	font-family: "楷体";
+	font-size: 16px;
+}
